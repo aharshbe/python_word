@@ -8,6 +8,6 @@
 ## Usage:
 * clone repo
 * make sure you are using pyhton 3.x
-* just type python3 wp.py
+* just type `python3 wp.py`
 
 #### Created by: Austin Harshberger
