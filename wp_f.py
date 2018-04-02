@@ -18,17 +18,22 @@ def get_multiline_input():
 
 #create a file
 def create_file():
+    os.system('clear')
     now = datetime.datetime.now()
     name_of_file = input("New file name: ")
     target = open(name_of_file, 'w')
     new_line = "\n"
     print(new_line + name_of_file + " " + str(now))
-    print("Insert mode..." + new_line)
+    if (name_of_file.endswith(".c") == True):
+        print("Create C file.." + new_line)
+    else:
+        print("Insert mode..." + new_line)
     top_of_file = "File " + name_of_file + ": " + str(now) + new_line
     contents = get_multiline_input()
     #write contents to file
-    target.write(top_of_file)
-    target.write(new_line)
+    if (name_of_file.endswith(".c")  == False):
+        target.write(top_of_file)
+        target.write(new_line)
     target.write(contents)
     target.write(new_line * 2)
     #save contents of the file
@@ -48,7 +53,7 @@ def list_files():
     while (i < len(files)):
         print("file " + str(i) + " " + files[i])
         i += 1
-
+    print("\n")
 #read a file
 def read_file():
     name_of_file = input("File to read: ")
