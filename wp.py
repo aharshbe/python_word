@@ -7,11 +7,12 @@ while (1):
     print("r:\t read a file")
     print("l:\t to list files")
     print("d:\t delete a file")
+    print("exit:\t to exit")
     print("\n")
 
     #get input and asses it
     i = input()
-    if (i != 'd' and i != 'r'):
+    if (i != 'd' and i[0] != 'r'):
         os.system("clear")
     if (i == 'c'):
         wp_f.create_file()
@@ -25,4 +26,5 @@ while (1):
         wp_f.list_files()
     else:
         print("Enter an option, e.g., 'c', 'r', 'l', 'd', or type 'exit' to exit")
+        print("\n")
         continue

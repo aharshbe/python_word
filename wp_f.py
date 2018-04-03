@@ -12,7 +12,11 @@ def get_multiline_input():
         if line:
             lines.append(line)
         else:
-            break
+            s = input("Save file? (y/n)")
+            if (s == 'y'):
+                break
+            else:
+                lines.append(line)
     input_val = '\n'.join(lines)
     return input_val
 
